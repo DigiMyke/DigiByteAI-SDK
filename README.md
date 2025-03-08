@@ -36,7 +36,7 @@ print("Balance:", wallet_balance)
 
 import os
 
-# Package Structure
+## Package Structure
 PACKAGE_STRUCTURE = {
     "DigiByteAI-SDK": {
         "digibyte_ai": {
@@ -62,7 +62,7 @@ PACKAGE_STRUCTURE = {
     }
 }
 
-# Print package structure as a visual tree
+## Print package structure as a visual tree
 def print_structure(structure, prefix=""):
     for key, value in structure.items():
         print(f"{prefix}├── {key}")
