@@ -40,22 +40,22 @@ import os
 # Package Structure
 PACKAGE_STRUCTURE = {
     "DigiByteAI-SDK": {
-        "digibyte_ai/": [
-            "__init__.py",  # Initialize the package
-            "wallet.py",  # Wallet management
-            "transaction.py",  # Transactions
-            "blockchain.py",  # Blockchain queries
-            "digi_id.py",  # Digi-ID authentication
-            "smart_contracts.py"  # AI-powered contracts
-        ],
-        "examples/": [
-            "send_transaction.py",  # Example of sending a transaction
-            "check_balance.py"  # Example of checking balance
-        ],
-        "tests/": [
-            "test_wallet.py",  # Tests for wallet functionality
-            "test_transaction.py"  # Tests for transaction functionality
-        ],
+        "digibyte_ai": {
+            "__init__.py": "Initialize the package",
+            "wallet.py": "Wallet management",
+            "transaction.py": "Transactions",
+            "blockchain.py": "Blockchain queries",
+            "digi_id.py": "Digi-ID authentication",
+            "smart_contracts.py": "AI-powered contracts"
+        },
+        "examples": {
+            "send_transaction.py": "Example of sending a transaction",
+            "check_balance.py": "Example of checking balance"
+        },
+        "tests": {
+            "test_wallet.py": "Tests for wallet functionality",
+            "test_transaction.py": "Tests for transaction functionality"
+        },
         "README.md": "Project Documentation",
         "setup.py": "Package setup script",
         "LICENSE": "License file",
@@ -66,15 +66,11 @@ PACKAGE_STRUCTURE = {
 # Print package structure as a visual tree
 def print_structure(structure, prefix=""):
     for key, value in structure.items():
-        if isinstance(value, list):
-            print(f"{prefix}├── {key}")
-            for item in value:
-                print(f"{prefix}│   ├── {item}")
-        elif isinstance(value, dict):
-            print(f"{prefix}├── {key}")
+        print(f"{prefix}├── {key}")
+        if isinstance(value, dict):
             print_structure(value, prefix + "│   ")
         else:
-            print(f"{prefix}├── {key} ({value})")
+            print(f"{prefix}│   ├── {value}")
 
 if __name__ == "__main__":
     print("DigiByteAI-SDK Package Structure:")
