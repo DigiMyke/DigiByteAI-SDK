@@ -18,7 +18,8 @@ To use this SDK, install the required dependencies:
 pip install requests bitcoinlib
 ```
 
-## Usage
+## API Usage
+### Wallet Management
 ```python
 from digibyte_ai.wallet import DigiByteWallet
 
@@ -32,6 +33,38 @@ print("Wallet Address:", wallet_address)
 # Check the balance
 wallet_balance = wallet.get_balance()
 print("Balance:", wallet_balance)
+```
+
+### Sending a Transaction
+```python
+from digibyte_ai.transaction import send_transaction
+
+# Send DigiByte from one address to another
+transaction_id = send_transaction(
+    from_address="SENDER_DIGIBYTE_ADDRESS",
+    to_address="RECEIVER_DIGIBYTE_ADDRESS",
+    amount=10,  # Amount in DGB
+    private_key="SENDER_PRIVATE_KEY"
+)
+print("Transaction ID:", transaction_id)
+```
+
+### Checking Transaction Status
+```python
+from digibyte_ai.blockchain import get_transaction
+
+# Retrieve transaction details
+transaction_data = get_transaction("TRANSACTION_ID")
+print("Transaction Data:", transaction_data)
+```
+
+### Digi-ID Authentication
+```python
+from digibyte_ai.digi_id import generate_digi_id
+
+# Generate a Digi-ID authentication request
+auth_request = generate_digi_id(nonce="random_string", callback_url="https://your-app.com/auth")
+print("Digi-ID Request:", auth_request)
 ```
 """
 
