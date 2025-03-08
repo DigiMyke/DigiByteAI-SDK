@@ -13,6 +13,7 @@ An open-source AI SDK for interacting with the DigiByte blockchain.
 - AI Smart Contracts: Script-based transactions for AI automation.
 
 ## Installation
+To use this SDK, install the required dependencies:
 ```bash
 pip install requests bitcoinlib
 ```
@@ -36,7 +37,7 @@ print("Balance:", wallet_balance)
 
 import os
 
-## Package Structure
+# Package Structure
 PACKAGE_STRUCTURE = {
     "DigiByteAI-SDK": {
         "digibyte_ai": {
@@ -62,7 +63,7 @@ PACKAGE_STRUCTURE = {
     }
 }
 
-## Print package structure as a visual tree
+# Print package structure as a visual tree
 def print_structure(structure, prefix=""):
     for key, value in structure.items():
         print(f"{prefix}├── {key}")
